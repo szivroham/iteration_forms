@@ -13,11 +13,8 @@ int main()
 			{2,2,4},
 			{5,-5,7}};
 
-	std::cout<<my_vec.size()<<" "<<my_vec[0].size()<<my_vec[1].size()<<my_vec[2].size()<<std::endl;
 	
 	first_test.set_BaseMatrix(my_vec);
-
-
 	std::cout<<"A base matrixa... :"<<std::endl;
 	first_test.get_BaseMatrix();
 	try{

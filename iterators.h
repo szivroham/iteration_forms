@@ -6,6 +6,8 @@
 #include <string>
 #include <vector>
 #include <iostream>
+
+
 //for the pow function ...
 #include <math.h>
 
@@ -75,7 +77,6 @@ int Iterator<base_type>::calculate_Determinant_(matrix<base_type> parameter_matr
 	if(matrix_size==2) 
 	{
 		determinant=parameter_matrix[0][0]*parameter_matrix[1][1]-parameter_matrix[0][1]*parameter_matrix[1][0];
-		std::cout<<"Determinans:"<< determinant<<std::endl;
 		return determinant;
 	}
 
@@ -102,19 +103,9 @@ int Iterator<base_type>::calculate_Determinant_(matrix<base_type> parameter_matr
 			}
 			sub_matrix.push_back(temp_row);
 		}
-		for(auto& row: sub_matrix)
-		{
-			for(auto& element : row)
-				std::cout<<element<<" ";
-
-			std::cout<<"\n";
-		}
 
 		//we are using this method recursively to calculate the sub determinants
 		determinant+=pow(-1,column)*parameter_matrix[0][column]*this->calculate_Determinant_(sub_matrix);
-
-		
-
 	}
 
 	return determinant;
